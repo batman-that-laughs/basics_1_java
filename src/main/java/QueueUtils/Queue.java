@@ -1,27 +1,10 @@
+package QueueUtils;
+
+import CommonUtils.Node;
+
 import java.io.Serializable;
 
 public class Queue<T> implements Serializable {
-
-    private class Node<T> {
-        private T data;
-        private Node<T> next;
-
-        public T getData() {
-            return data;
-        }
-
-        public void setData(T data) {
-            this.data = data;
-        }
-
-        public Node<T> getNext() {
-            return next;
-        }
-
-        public void setNext(Node<T> next) {
-            this.next = next;
-        }
-    }
 
     private Node<T> head;
 
@@ -32,12 +15,42 @@ public class Queue<T> implements Serializable {
         newNode.setData(data);
         if(null != tail){
             tail.setNext(newNode);
+            tail = newNode;
         }else{
             head = newNode;
             tail = newNode;
         }
     }
 
-    public
+    public T peek(){
+        if(null != head){
+            return head.getData();
+        }else
+            return null;
+    }
+
+    public T dequeue(){
+        if(null != head){
+            T data = head.getData();
+            if(null != head.getNext())
+                head = head.getNext();
+            else{
+                head = null;
+                tail = null;
+            }
+            return data;
+        }else
+            return null;
+    }
+
+    public static void main(String[] args) {
+        Queue<Integer> integerQueue = new Queue<>();
+        for(int i = 0; i < 10; i++){
+            integerQueue.enqueue(i);
+        }
+        while(null != integerQueue.peek()){
+            System.out.println(integerQueue.dequeue());
+        }
+    }
 
 }
