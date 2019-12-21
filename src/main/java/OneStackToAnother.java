@@ -33,21 +33,20 @@ public class OneStackToAnother {
     }
 
     public static void main(String[] args) {
-        Stack<Integer> integerStack= new Stack<>();
-        for(int i = 0; i < 10; i++){
+        Stack<Integer> integerStack = new Stack<>();
+        for (int i = 0; i < 10; i++) {
             integerStack.push(i);
-        }
-        OneStackToAnother oneStackToAnother = new OneStackToAnother();
-        Stack<Integer> finalStackUsingThreeStacks = oneStackToAnother.usingThreeStacks(integerStack);
-        Stack<Integer> finalStackUsingTwoStacks = oneStackToAnother.usingTwoStacks(finalStackUsingThreeStacks);
+            OneStackToAnother oneStackToAnother = new OneStackToAnother();
+            Stack<Integer> finalStackUsingThreeStacks = oneStackToAnother.usingThreeStacks(integerStack);
+            Stack<Integer> finalStackUsingTwoStacks = oneStackToAnother.usingTwoStacks(finalStackUsingThreeStacks);
 //        System.out.println("using 3 stacks");
 //        while(null != finalStackUsingThreeStacks.peek()){
 //            System.out.println(finalStackUsingThreeStacks.pop());
 //        }
-        System.out.println("using 2 stacks");
-        while(null != finalStackUsingTwoStacks.peek()){
-            System.out.println(finalStackUsingTwoStacks.pop());
+            System.out.println("using 2 stacks");
+            while (null != finalStackUsingTwoStacks.peek()) {
+                System.out.println(finalStackUsingTwoStacks.pop());
+            }
         }
     }
-
 }

@@ -33,6 +33,7 @@ public class Stack<T> implements Serializable {
             return null;
     }
 
+
     public static void main(String[] args) {
         Stack<Integer> integerStack = new Stack<>();
         for(int i = 0; i < 10; i++){
