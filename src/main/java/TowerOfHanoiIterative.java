@@ -4,6 +4,21 @@ import StackUtils.Stack;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+* Steps:
+* 1: number of disks -> even?
+*   y:
+*       i. move between A to B
+*       ii. Move between A and C
+*       iii. Move between B and C
+*     REPEAT
+*   n:
+*       i. move between A to C
+ *      ii. Move between A and B
+ *      iii. Move between B and C
+ *    REPEAT
+ */
+
 public class TowerOfHanoiIterative {
 
     public List<Integer> towerOfHanoiIterativeStringSolution(String sourceName, String destinationName, String extraName, List<Integer> source, List<Integer> destination, List<Integer> extraStack){
